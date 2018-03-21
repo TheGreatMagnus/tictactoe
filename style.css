@@ -8,14 +8,17 @@ table {
   margin-left: 25%;
 }
 
-table td {
+td {
   border: 2px solid #222;
   padding: 2%;
   width: 100px;
   height: 100px;
   text-align: center;
+  vertical-align: middle;
   cursor: pointer;
-  font-size: 80px;
+  font-family:  "Comic Sans MS", cursive, sans-serif;
+	font-size:  70px;
+  color: black;
 
 }
 
@@ -34,7 +37,7 @@ table td {
 }
 
  button {
-   border: 3px solid green;
+   border: 10px solid green;
    background-color: green;
    border-radius: 3px;
    margin-top: 40%;
