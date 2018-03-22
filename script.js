@@ -33,10 +33,13 @@ function startGame() {
    }
 }
 
+//1. allows humanPlayer to take a turn
 function turnClick(square){
   turn(square.target.id, humanPlayer);
 }
 
+//turn function, taking a turn referenced in above function
+// checks if game is won after every move
 function turn(squareId, player) {
   originalBoard[squareId] = player;
   document.getElementById(squareId).innerText = player;
@@ -46,10 +49,20 @@ function turn(squareId, player) {
     }
 }
 
-// function checkWin(board, player) {
-//
-// }
 
+//checks if game is won
+function checkWin(board, player) {
+	let plays = board.reduce((a, e, i) =>
+		(e === player) ? a.concat(i) : a, []);
+	let gameWon = null;
+	for (let [index, win] of winCombos.entries()) {
+		if (win.every(elem => plays.indexOf(elem) > -1)) {
+			gameWon = {index: index, player: player};
+			break;
+		}
+	}
+	return gameWon;
+}
 // logic to show winner
 
 // AI
